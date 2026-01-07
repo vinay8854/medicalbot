@@ -1,0 +1,12 @@
+﻿Flask==3.1.0
+gunicorn==23.0.0
+requests==2.32.3
+python-dotenv==1.0.1
+pinecone==6.0.2
+langchain==0.3.21
+langchain-community==0.3.20
+langchain-core==0.3.52
+langchain-pinecone==0.2.13
+sentence-transformers==3.4.1
+huggingface-hub==0.29.3
+torch==2.6.0

@@ -30,7 +30,7 @@ docsearch = PineconeVectorStore.from_existing_index(
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
 # Hardcoded Groq API Key
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 
 # Store last 5 exchanges for chat memory

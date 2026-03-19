@@ -8,14 +8,16 @@ from pinecone import Pinecone
 
 app = Flask(__name__)
 
-# Hardcoded Pinecone API Key
-api_key = os.environ.get("GROQ_API_KEY")
+# Get both keys from environment variables
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
+
 INDEX_NAME = "medicalbot"
 
 # Initialize Pinecone client
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-# ✅ Set API key explicitly in environment
+# Set API key explicitly in environment
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 
 # Load embeddings
@@ -29,8 +31,6 @@ docsearch = PineconeVectorStore.from_existing_index(
 
 retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k": 3})
 
-# Hardcoded Groq API Key
-GROQ_API_KEY = "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"
 GROQ_ENDPOINT = "https://api.groq.com/openai/v1/chat/completions"
 
 # Store last 5 exchanges for chat memory

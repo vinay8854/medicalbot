@@ -9,7 +9,7 @@ from pinecone import Pinecone
 app = Flask(__name__)
 
 # Hardcoded Pinecone API Key
-PINECONE_API_KEY = "pcsk_3xBdCP_4pWeFB6PgW2tyUg9Amoxc4RwCYLa9h3cPiiyaXcsJzeCTceUuhg5Z6aJGjQkZ7M"
+api_key = os.environ.get("GROQ_API_KEY")
 INDEX_NAME = "medicalbot"
 
 # Initialize Pinecone client
